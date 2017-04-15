@@ -7,31 +7,31 @@ import signal
 
 class Read_RFID:
 	def get_uid(self):
-        # return uid in RFID
-        rfid_uid = []
-        # rfid_uid = [128,15,177,88]
-        MIFAREReader = MFRC522.MFRC522()
-        hex_uid = ''
+		# return uid in RFID
+		rfid_uid = []
+		# rfid_uid = [128,15,177,88]
+		MIFAREReader = MFRC522.MFRC522()
+		hex_uid = ''
 
-        while True:
-            (status,TagType) = MIFAREReader.MFRC522_Request(MIFAREReader.PICC_REQIDL)
+		while True:
+			(status,TagType) = MIFAREReader.MFRC522_Request(MIFAREReader.PICC_REQIDL)
 
-            # If a card is found
-            if status == MIFAREReader.MI_OK:
-                print "Card detected"
+			# If a card is found
+			if status == MIFAREReader.MI_OK:
+				print "Card detected"
             # Get the UID of the card
-            (status,uid) = MIFAREReader.MFRC522_Anticoll()
+			(status,uid) = MIFAREReader.MFRC522_Anticoll()
             # If we have the UID, continue
-            if status == MIFAREReader.MI_OK:
-                rfid_uid = uid
-                break
+			if status == MIFAREReader.MI_OK:
+				rfid_uid = uid
+				break
 
         ###################
         # changes uid to hex number but on string
-        for i in range(len(rfid_uid)):
-            rfid_uid[i] = format(rfid_uid[i],'02x')
+		for i in range(len(rfid_uid)):
+			rfid_uid[i] = format(rfid_uid[i],'02x')
 
-        for i in range(len(rfid_uid)):
-            hex_uid = hex_uid + rfid_uid[i]
+		for i in range(len(rfid_uid)):
+			hex_uid = hex_uid + rfid_uid[i]
 
-        return hex_uid
+		return hex_uid
