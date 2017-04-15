@@ -8,7 +8,7 @@ while c == 'r' :
 		print'End!!'
 		break
 	else:
-		print'Read!!'
+		#print'Read!!'
 		print RR.get_uid()
 
 

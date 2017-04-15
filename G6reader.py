@@ -7,7 +7,7 @@ import signal
 
 class Read_RFID:
 	def get_uid(self):
-		print 'start reding'
+		print 'Waiting for RFIDtag'
 		# return uid in RFID
 		rfid_uid = []
 		# rfid_uid = [128,15,177,88]
@@ -19,7 +19,7 @@ class Read_RFID:
 
 			# If a card is found
 			if status == MIFAREReader.MI_OK:
-				print "Card detected"
+				print "RFIDtag detected"
             # Get the UID of the card
 			(status,uid) = MIFAREReader.MFRC522_Anticoll()
             # If we have the UID, continue
@@ -34,5 +34,6 @@ class Read_RFID:
 
 		for i in range(len(rfid_uid)):
 			hex_uid = hex_uid + rfid_uid[i]
+		return rfid_uid
 
-		return hex_uid
+		#return hex_uid
