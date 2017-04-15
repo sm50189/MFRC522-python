@@ -7,6 +7,7 @@ import signal
 
 class Read_RFID:
 	def get_uid(self):
+		print 'start reding'
 		# return uid in RFID
 		rfid_uid = []
 		# rfid_uid = [128,15,177,88]
