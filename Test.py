@@ -1,4 +1,4 @@
-from G6reader.py import Read_RFID as RR
+from G6reader import Read_RFID as RR
 
 c = r
 while c == r :
