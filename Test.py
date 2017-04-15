@@ -9,6 +9,6 @@ while c == 'r' :
 		break
 	else:
 		print'Read!!'
-		print RR.get_uid
+		print RR.get_uid()
 
 
