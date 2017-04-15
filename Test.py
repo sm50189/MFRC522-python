@@ -8,6 +8,6 @@ while c == 'r' :
 		break
 	else:
 		print'Read!!'
-		Read_RFID.get_uid
+		print Read_RFID.get_uid
 
 
