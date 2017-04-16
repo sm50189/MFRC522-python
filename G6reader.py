@@ -37,5 +37,3 @@ class Read_RFID:
 		return rfid_uid
 
 		#return hex_uid
-	def end_read(self):
-		GPIO.cleanup()
