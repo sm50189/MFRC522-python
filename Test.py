@@ -5,15 +5,15 @@ def main():
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(36, GPIO.OUT)
 	GPIO.setup(38, GPIO.OUT)
-	GPIO.setup(40, GPIO.OUT)
-	GPIO.setup(35, GPIO.OUT)
-	GPIO.setup(37, GPIO.OUT)
+	#GPIO.setup(40, GPIO.OUT)
+	#GPIO.setup(35, GPIO.OUT)
+	#GPIO.setup(37, GPIO.OUT)
 	
-	GPIO.output(36, 0)
-	GPIO.output(38, 0)
-	GPIO.output(40, 0)
-	GPIO.output(35, 0)
-	GPIO.output(37, 0)
+	#GPIO.output(36, 0)
+	#GPIO.output(38, 0)
+	#GPIO.output(40, 0)
+	#GPIO.output(35, 0)
+	#GPIO.output(37, 0)
 
 	RR = Read_RFID()
 	c = 'r'
