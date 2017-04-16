@@ -9,11 +9,11 @@ def main():
 	GPIO.setup(35, GPIO.OUT)
 	GPIO.setup(37, GPIO.OUT)
 	
-	GPIO.output(36, GPIO.LOW)
-	GPIO.output(38, GPIO.LOW)
-	GPIO.output(40, GPIO.LOW)
-	GPIO.output(35, GPIO.LOW)
-	GPIO.output(37, GPIO.LOW)
+	GPIO.output(36, 0)
+	GPIO.output(38, 0)
+	GPIO.output(40, 0)
+	GPIO.output(35, 0)
+	GPIO.output(37, 0)
 
 	RR = Read_RFID()
 	c = 'r'
@@ -27,11 +27,11 @@ def main():
 			#print'Read!!'
 			#for i in [16,20,21,19,26]:
 			for i in [36,38]:
-				GPIO.output(i, GPIO.HIGH)
+				GPIO.output(i, 1)
 				print'Start read port',i
 				print RR.get_uid()
-				GPIO.output(36, GPIO.LOW)
-				GPIO.output(38, GPIO.LOW)
+				#GPIO.output(36, 0)
+				#GPIO.output(38, 0)
 				#GPIO.output(21, GPIO.LOW)
 				#GPIO.output(19, GPIO.LOW)
 				#GPIO.output(26, GPIO.LOW)
