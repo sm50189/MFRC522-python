@@ -392,7 +392,7 @@ class MFRC522:
         i = i+1
 
   def MFRC522_Init(self):
-    GPIO.output(self.NRSTPD, 1)
+    #GPIO.output(self.NRSTPD, 1)
   
     self.MFRC522_Reset();
     
