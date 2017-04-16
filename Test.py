@@ -2,7 +2,7 @@ from G6reader import *
 import RPi.GPIO as GPIO
 
 def main():
-	#GPIO.setmode(GPIO.BOARD)
+	GPIO.setmode(GPIO.BOARD)
 	#GPIO.setup(36, GPIO.OUT)
 	#GPIO.setup(38, GPIO.OUT)
 	#GPIO.setup(40, GPIO.OUT)
