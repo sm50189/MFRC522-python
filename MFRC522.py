@@ -118,11 +118,11 @@ class MFRC522:
 	GPIO.setup(35, GPIO.OUT)
 	GPIO.setup(37, GPIO.OUT)
 	
-	GPIO.output(36, GPIO.LOW)
-	GPIO.output(38, GPIO.LOW)
-	GPIO.output(40, GPIO.LOW)
-	GPIO.output(35, GPIO.LOW)
-	GPIO.output(37, GPIO.LOW)
+	#GPIO.output(36, GPIO.LOW)
+	#GPIO.output(38, GPIO.LOW)
+	#GPIO.output(40, GPIO.LOW)
+	#GPIO.output(35, GPIO.LOW)
+	#GPIO.output(37, GPIO.LOW)
 	self.MFRC522_Init()
   
   def MFRC522_Reset(self):
