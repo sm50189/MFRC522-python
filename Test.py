@@ -3,17 +3,17 @@ import RPi.GPIO as GPIO
 
 def main():
 	GPIO.setmode(GPIO.BOARD)
-	GPIO.setup(16, GPIO.OUT)
-	GPIO.setup(20, GPIO.OUT)
-	GPIO.setup(21, GPIO.OUT)
-	GPIO.setup(19, GPIO.OUT)
-	GPIO.setup(26, GPIO.OUT)
+	GPIO.setup(36, GPIO.OUT)
+	GPIO.setup(38, GPIO.OUT)
+	GPIO.setup(40, GPIO.OUT)
+	GPIO.setup(35, GPIO.OUT)
+	GPIO.setup(37, GPIO.OUT)
 	
-	GPIO.output(16, GPIO.LOW)
-	GPIO.output(20, GPIO.LOW)
-	GPIO.output(21, GPIO.LOW)
-	GPIO.output(19, GPIO.LOW)
-	GPIO.output(26, GPIO.LOW)
+	GPIO.output(36, GPIO.LOW)
+	GPIO.output(38, GPIO.LOW)
+	GPIO.output(40, GPIO.LOW)
+	GPIO.output(35, GPIO.LOW)
+	GPIO.output(37, GPIO.LOW)
 
 	RR = Read_RFID()
 	c = 'r'
@@ -26,11 +26,11 @@ def main():
 		else:
 			#print'Read!!'
 			#for i in [16,20,21,19,26]:
-			for i in [16,20]:
+			for i in [36,38]:
 				GPIO.output(i, GPIO.HIGH)
 				print RR.get_uid(i)
-				GPIO.output(16, GPIO.LOW)
-				GPIO.output(20, GPIO.LOW)
+				GPIO.output(36, GPIO.LOW)
+				GPIO.output(38, GPIO.LOW)
 				#GPIO.output(21, GPIO.LOW)
 				#GPIO.output(19, GPIO.LOW)
 				#GPIO.output(26, GPIO.LOW)
