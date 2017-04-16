@@ -395,17 +395,17 @@ class MFRC522:
         i = i+1
 
   def MFRC522_Init(self):
-    GPIO.output(self.NRSTPD, 1)
+	GPIO.output(self.NRSTPD, 1)
 	GPIO.output(self.testport, 1)
-  
-    self.MFRC522_Reset();
+	
+	self.MFRC522_Reset();
+	
     
+	self.Write_MFRC522(self.TModeReg, 0x8D)
+	self.Write_MFRC522(self.TPrescalerReg, 0x3E)
+	self.Write_MFRC522(self.TReloadRegL, 30)
+	self.Write_MFRC522(self.TReloadRegH, 0)
     
-    self.Write_MFRC522(self.TModeReg, 0x8D)
-    self.Write_MFRC522(self.TPrescalerReg, 0x3E)
-    self.Write_MFRC522(self.TReloadRegL, 30)
-    self.Write_MFRC522(self.TReloadRegH, 0)
-    
-    self.Write_MFRC522(self.TxAutoReg, 0x40)
-    self.Write_MFRC522(self.ModeReg, 0x3D)
-    self.AntennaOn()
+	self.Write_MFRC522(self.TxAutoReg, 0x40)
+	self.Write_MFRC522(self.ModeReg, 0x3D)
+	self.AntennaOn()
