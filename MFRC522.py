@@ -123,7 +123,7 @@ class MFRC522:
 	GPIO.output(40, GPIO.0)
 	GPIO.output(35, GPIO.0)
 	GPIO.output(37, GPIO.0)
-    self.MFRC522_Init()
+	self.MFRC522_Init()
   
   def MFRC522_Reset(self):
     self.Write_MFRC522(self.CommandReg, self.PCD_RESETPHASE)
