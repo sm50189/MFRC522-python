@@ -8,6 +8,7 @@ import time
   
 class MFRC522:
   NRSTPD = 22
+  testport = 40
   
   MAX_LEN = 16
   
@@ -112,7 +113,7 @@ class MFRC522:
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(40, GPIO.OUT)
 	GPIO.setup(22, GPIO.OUT)
-	GPIO.output(40, 1)
+	GPIO.output(self.testport, 1)
 	GPIO.output(self.NRSTPD, 1)
 	#GPIO.setup(36, GPIO.OUT)
 	#GPIO.setup(38, GPIO.OUT)
@@ -395,6 +396,7 @@ class MFRC522:
 
   def MFRC522_Init(self):
     GPIO.output(self.NRSTPD, 1)
+	GPIO.output(self.testport, 1)
   
     self.MFRC522_Reset();
     
