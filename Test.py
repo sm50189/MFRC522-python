@@ -28,6 +28,7 @@ def main():
 			#for i in [16,20,21,19,26]:
 			for i in [36,38]:
 				GPIO.output(i, GPIO.HIGH)
+				print'Start read port',i
 				print RR.get_uid()
 				GPIO.output(36, GPIO.LOW)
 				GPIO.output(38, GPIO.LOW)
