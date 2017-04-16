@@ -11,6 +11,3 @@ while c == 'r' :
 	else:
 		#print'Read!!'
 		print RR.get_uid()
-
-
-
