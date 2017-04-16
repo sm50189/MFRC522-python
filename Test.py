@@ -2,9 +2,9 @@ from G6reader import *
 import RPi.GPIO as GPIO
 
 def main():
-	GPIO.setmode(GPIO.BOARD)
-	GPIO.setup(36, GPIO.OUT)
-	GPIO.setup(38, GPIO.OUT)
+	#GPIO.setmode(GPIO.BOARD)
+	#GPIO.setup(36, GPIO.OUT)
+	#GPIO.setup(38, GPIO.OUT)
 	#GPIO.setup(40, GPIO.OUT)
 	#GPIO.setup(35, GPIO.OUT)
 	#GPIO.setup(37, GPIO.OUT)
@@ -26,10 +26,10 @@ def main():
 		else:
 			#print'Read!!'
 			#for i in [16,20,21,19,26]:
-			for i in [36,38]:
-				GPIO.output(i, 1)
-				print'Start read port',i
-				print RR.get_uid()
+			#for i in [36,38]:
+				#GPIO.output(i, 1)
+				#print'Start read port',i
+			print RR.get_uid()
 				#GPIO.output(36, 0)
 				#GPIO.output(38, 0)
 				#GPIO.output(21, GPIO.LOW)
