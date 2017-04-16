@@ -6,6 +6,17 @@ import MFRC522
 import signal
 
 class Read_RFID:
+
+	# Capture SIGINT for cleanup when the script is aborted
+	def end_read(signal,frame):
+		global continue_reading
+		print "Ctrl+C captured, ending read."
+		continue_reading = False
+		GPIO.cleanup()
+
+	# Hook the SIGINT
+	signal.signal(signal.SIGINT, end_read)
+
 	def get_uid(self):
 		print 'Waiting for RFIDtag'
 		# return uid in RFID

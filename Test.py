@@ -1,5 +1,6 @@
 from G6reader import *
 
+
 RR = Read_RFID()
 c = 'r'
 while c == 'r' :
@@ -11,3 +12,6 @@ while c == 'r' :
 	else:
 		#print'Read!!'
 		print RR.get_uid()
+
+
+
