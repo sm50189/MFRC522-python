@@ -9,7 +9,7 @@ while c == 'r' :
 		RR.end_read()
 		print'End!!'
 		break
-	else if c == 'r':
+	elif c == 'r':
 		#print'Read!!'
 		print RR.get_uid()
 	else:
