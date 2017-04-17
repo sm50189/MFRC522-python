@@ -17,7 +17,7 @@ class chip_select():
 	def __enter__(self):
 		GPIO.output(self._port_num,GPIO.LOW)
 	
-	def __exit__(self):
+	def __exit__(self,type,value,traceback):
 		GPIO.output(self._port_num,GPIO.HIGH)
 while c == 'r' :
 	c = raw_input('Read(r) or End(e): ')
