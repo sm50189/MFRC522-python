@@ -11,6 +11,8 @@ try:
 	GPIO.output(38, GPIO.HIGH)
 	GPIO.output(40, GPIO.HIGH)
 	while state == '1' or state == '2':
+		GPIO.output(38, GPIO.HIGH)
+		GPIO.output(40, GPIO.HIGH)
 		state = raw_input("Reader? 1 = '1' 2 = '2':")
 		if state == '1':
 			print'1 Go LOW'
