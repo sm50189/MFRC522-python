@@ -17,11 +17,12 @@ class chip_select():
 	def __enter__(self):
 		print'Go LOW'
 		GPIO.output(self._port_num,GPIO.LOW)
+		time.sleep(1)
 	
 	def __exit__(self,type,value,traceback):
 		print'Go HIGH'
 		GPIO.output(self._port_num,GPIO.HIGH)
-		#time.sleep(1)
+		time.sleep(1)
 		print "exit"
 try:
 	while c == 'r' :
