@@ -47,10 +47,10 @@ except KeyboardInterrupt:
 	RR.end_read()
 	#GPIO.cleanup()
 	print'Clean and End'
-finally:
-	RR.end_read()
+#finally:
+	#RR.end_read()
 	#GPIO.cleanup()
-	print'Clean and End'
+	#print'Clean and End'
 
 
 
