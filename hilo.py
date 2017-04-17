@@ -15,6 +15,9 @@ try:
 		else:
 			print'Break'
 			break
+except KeyboardInterrupt:
+	GPIO.cleanup()
+	print'Clean and End'
 finally:
 	GPIO.cleanup()
 	print'Clean and End'
