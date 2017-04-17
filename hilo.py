@@ -1,17 +1,29 @@
+from G6reader import *
 import RPi.GPIO as GPIO
+import time
+
 try:
-	state = 'l'
+	RR = Read_RFID()
+	state = '1'
 	GPIO.setmode(GPIO.BOARD)
-	GPIO.setup(36, GPIO.OUT)
-	GPIO.output(36, GPIO.LOW)
-	while state == 'l' or state == 'h':
-		state = raw_input("State? LOW = 'l' HI = 'h':")
-		if state == 'l':
-			print'Go LOW'
-			GPIO.output(36, GPIO.LOW)
-		elif state == 'h':
-			print'Go HIGH'
-			GPIO.output(36, GPIO.HIGH)
+	GPIO.setup(38, GPIO.OUT)
+	GPIO.setup(40, GPIO.OUT)
+	GPIO.output(38, GPIO.HIGH)
+	GPIO.output(40, GPIO.HIGH)
+	while state == '1' or state == '2':
+		state = raw_input("Reader? 1 = '1' 2 = '2':")
+		if state == '1':
+			print'1 Go LOW'
+			GPIO.output(38, GPIO.LOW)
+			time.sleep(1)
+			print RR.get_uid()
+			GPIO.output(38, GPIO.HIGH)
+		elif state == '2':
+			print'2 Go LOW'
+			GPIO.output(40, GPIO.LOW)
+			time.sleep(1)
+			print RR.get_uid()
+			GPIO.output(40, GPIO.HIGH)
 		else:
 			print'Break'
 			break
