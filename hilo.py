@@ -17,13 +17,13 @@ try:
 		if state == '1':
 			print'1 Go LOW'
 			GPIO.output(38, GPIO.LOW)
-			time.sleep(1)
+			time.sleep(3)
 			print RR.get_uid()
 			GPIO.output(38, GPIO.HIGH)
 		elif state == '2':
 			print'2 Go LOW'
 			GPIO.output(40, GPIO.LOW)
-			time.sleep(1)
+			time.sleep(3)
 			print RR.get_uid()
 			GPIO.output(40, GPIO.HIGH)
 		else:
