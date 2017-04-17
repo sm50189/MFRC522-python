@@ -4,7 +4,7 @@ try:
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(36, GPIO.OUT)
 	GPIO.output(36, GPIO.LOW)
-	while state == 'l' || state == 'h':
+	while state == 'l' or state == 'h':
 		state = raw_input("State? LOW = 'l' HI = 'h':")
 		if state == 'l':
 			print'Go LOW'
