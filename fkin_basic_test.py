@@ -1,17 +1,13 @@
 from G6reader import *
-import RPi.GPIO as GPIO
 
 RR = Read_RFID()
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(40, GPIO.OUT)
-GPIO.output(40, GPIO.LOW)
-
-#try:
-print RR.get_uid()
-GPIO.cleanup()
-#except KeyboardInterrupt:
-#	RR.end_read()
-	#GPIO.cleanup()
-#	print'Clean and End'
-
-
+c = 'r'
+while c == 'r' :
+	c = raw_input('Read(r) or End(e): ')
+	if c=='e':
+		RR.end_read()
+		print'End!!'
+		break
+	else:
+		#print'Read!!'
+		print RR.get_uid()
