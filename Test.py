@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 
 
 RR = Read_RFID()
-#GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setup(40, GPIO.OUT)
 GPIO.setup(24, GPIO.OUT)
 GPIO.output(40, GPIO.HIGH)
