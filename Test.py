@@ -4,10 +4,10 @@ import time
 
 RR = Read_RFID()
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(18, GPIO.OUT)
-GPIO.output(18, GPIO.LOW)
+#GPIO.setup(18, GPIO.OUT)
+#GPIO.output(18, GPIO.LOW)
 c = 'r'
-
+bus = Busout(18,16)
 class Busout(object):
 	def __init__(*args):
 		self._bus = args
@@ -22,19 +22,18 @@ class Busout(object):
 		
 		
 class chip_select():
-	def __init__(self,port_num,state):
-		self._port_num = port_num
-		self._state = state
+	def __init__(self,bus,value):
+		self._bus = bus
+		self._value = value
 	
 	def __enter__(self):
-		print'Go LOW'
-		GPIO.output(self._port_num,self._state)
-		time.sleep(1)
+		print'Enter read card number',self._value
+		self._bus.write(self._value)
+		time.sleep(0.1)
 	
 	def __exit__(self,type,value,traceback):
-		print'Go HIGH'
+		print'Finish read card number',self._value
 		time.sleep(1)
-		print "exit"
 try:
 	while c == 'r' :
 		c = raw_input('Read(r) or End(e): ')
@@ -44,14 +43,19 @@ try:
 			break
 		elif c == 'r':
 			#print'Read!!'
-			with chip_select(18,GPIO.LOW) as cs:
-				print RR.get_uid()
-			with chip_select(18,GPIO.HIGH) as cs:
-				print RR.get_uid()
 			#GPIO.output(24, GPIO.LOW)
 			#print RR.get_uid()
 			#GPIO.output(24, GPIO.HIGH)
 			#GPIO.output(40, GPIO.LOW)
+			with chip_select(bus,1) as cs:
+				print RR.get_uid()
+			with chip_select(bus,2) as cs:
+				print RR.get_uid()
+			with chip_select(bus,3) as cs:
+				print RR.get_uid()
+			with chip_select(bus,4) as cs:
+				print RR.get_uid()
+				
 		else:
 			c = 'r'
 			continue
