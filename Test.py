@@ -7,20 +7,20 @@ GPIO.setmode(GPIO.BOARD)
 #GPIO.setup(18, GPIO.OUT)
 #GPIO.output(18, GPIO.LOW)
 c = 'r'
-bus = Busout(18,16)
+
 class Busout(object):
-	def __init__(*args):
+	def __init__(self,*args):
 		self._bus = args
 		for i in self._bus:
 			GPIO.setup(i,GPIO.OUT)
 	
-	def write(value):
+	def write(self,value):
 		mask = 1
 		for i in self._bus:
 			GPIO.output(i,value&mask)
 			mask = mask*2
 		
-		
+bus = Busout(18,16)		
 class chip_select():
 	def __init__(self,bus,value):
 		self._bus = bus
