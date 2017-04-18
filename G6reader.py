@@ -26,7 +26,7 @@ class Read_RFID:
             # If we have the UID, continue
 			if status == MIFAREReader.MI_OK:
 				rfid_uid = uid
-				break
+				break			
 
         ###################
         # changes uid to hex number but on string
