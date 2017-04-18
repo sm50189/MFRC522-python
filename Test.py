@@ -48,13 +48,13 @@ try:
 			#GPIO.output(24, GPIO.HIGH)
 			#GPIO.output(40, GPIO.LOW)
 			with chip_select(bus,1) as cs:
-				print RR.get_uid()
+				print RR.get_uid(to = 5)
 			with chip_select(bus,2) as cs:
-				print RR.get_uid()
+				print RR.get_uid(to = 5)
 			with chip_select(bus,3) as cs:
-				print RR.get_uid()
+				print RR.get_uid(to = 5)
 			with chip_select(bus,4) as cs:
-				print RR.get_uid()
+				print RR.get_uid(to = 5)
 				
 		else:
 			c = 'r'
