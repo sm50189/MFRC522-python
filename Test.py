@@ -8,6 +8,19 @@ GPIO.setup(18, GPIO.OUT)
 GPIO.output(18, GPIO.LOW)
 c = 'r'
 
+class Busout(object):
+	def __init__(*args):
+		self._bus = args
+		for i in self._bus:
+			GPIO.setup(i,GPIO.OUT)
+	
+	def write(value):
+		mask = 1
+		for i in self._bus:
+			GPIO.output(i,value&mask)
+			mask = mask*2
+		
+		
 class chip_select():
 	def __init__(self,port_num,state):
 		self._port_num = port_num
