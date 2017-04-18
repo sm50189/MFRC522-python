@@ -27,8 +27,8 @@ class Read_RFID:
 			if status == MIFAREReader.MI_OK:
 				rfid_uid = uid
 				break
-			else:
-				print "I don't get UID"
+			#else:
+				#print "I don't get UID"
 
         ###################
         # changes uid to hex number but on string
