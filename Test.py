@@ -4,8 +4,8 @@ import time
 
 RR = Read_RFID()
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(20, GPIO.OUT)
-GPIO.output(20, GPIO.LOW)
+GPIO.setup(18, GPIO.OUT)
+GPIO.output(18, GPIO.LOW)
 c = 'r'
 
 class chip_select():
@@ -15,14 +15,13 @@ class chip_select():
 	
 	def __enter__(self):
 		print'Go LOW'
-		GPIO.output(self._port_num,state)
+		GPIO.output(self._port_num,self._state)
 		time.sleep(1)
 	
 	def __exit__(self,type,value,traceback):
 		print'Go HIGH'
 		time.sleep(1)
 		print "exit"
-def 
 try:
 	while c == 'r' :
 		c = raw_input('Read(r) or End(e): ')
@@ -32,9 +31,9 @@ try:
 			break
 		elif c == 'r':
 			#print'Read!!'
-			with chip_select(20,GPIO.LOW) as cs:
+			with chip_select(18,GPIO.LOW) as cs:
 				print RR.get_uid()
-			with chip_select(20,GPIO.HIGH) as cs:
+			with chip_select(18,GPIO.HIGH) as cs:
 				print RR.get_uid()
 			#GPIO.output(24, GPIO.LOW)
 			#print RR.get_uid()
