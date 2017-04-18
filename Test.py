@@ -4,26 +4,25 @@ import time
 
 RR = Read_RFID()
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(40, GPIO.OUT)
-GPIO.setup(38, GPIO.OUT)
-GPIO.output(40, GPIO.HIGH)
-GPIO.output(38, GPIO.LOW)
+GPIO.setup(20, GPIO.OUT)
+GPIO.output(20, GPIO.LOW)
 c = 'r'
 
 class chip_select():
-	def __init__(self,port_num):
+	def __init__(self,port_num,state):
 		self._port_num = port_num
+		self._state = state
 	
 	def __enter__(self):
 		print'Go LOW'
-		GPIO.output(self._port_num,GPIO.LOW)
+		GPIO.output(self._port_num,state)
 		time.sleep(1)
 	
 	def __exit__(self,type,value,traceback):
 		print'Go HIGH'
-		GPIO.output(self._port_num,GPIO.HIGH)
 		time.sleep(1)
 		print "exit"
+def 
 try:
 	while c == 'r' :
 		c = raw_input('Read(r) or End(e): ')
@@ -33,9 +32,9 @@ try:
 			break
 		elif c == 'r':
 			#print'Read!!'
-			with chip_select(38) as cs:
+			with chip_select(20,GPIO.LOW) as cs:
 				print RR.get_uid()
-			with chip_select(40) as cs:
+			with chip_select(20,GPIO.HIGH) as cs:
 				print RR.get_uid()
 			#GPIO.output(24, GPIO.LOW)
 			#print RR.get_uid()
@@ -48,8 +47,8 @@ except KeyboardInterrupt:
 	RR.end_read()
 	#GPIO.cleanup()
 	print'Clean and End'
-#finally:
-	#RR.end_read()
+finally:
+	RR.end_read()
 	#GPIO.cleanup()
 	#print'Clean and End'
 
